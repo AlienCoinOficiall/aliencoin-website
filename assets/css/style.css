@@ -418,3 +418,45 @@ ufoFloat 3s ease-in-out infinite;
 
 }
 }
+/* Galactic Signal */
+
+.signal{
+
+    position:absolute;
+
+    top:190px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:#00ffff;
+
+    font-size:18px;
+
+    letter-spacing:3px;
+
+    text-shadow:
+    0 0 10px #00ffff,
+    0 0 25px #8b00ff;
+
+    animation:
+    signalPulse 2s infinite;
+
+}
+
+
+@keyframes signalPulse{
+
+    0%{
+        opacity:.3;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.3;
+    }
+
+}
