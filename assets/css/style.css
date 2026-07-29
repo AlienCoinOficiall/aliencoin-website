@@ -29,15 +29,39 @@ body::before{
     z-index:-2;
 
     background:
-    radial-gradient(circle at 20% 30%, rgba(0,255,255,.25), transparent 35%),
-    radial-gradient(circle at 80% 20%, rgba(150,0,255,.25), transparent 40%),
-    radial-gradient(circle at 50% 90%, rgba(0,120,255,.2), transparent 45%),
+    radial-gradient(circle at 15% 25%,
+    rgba(0,255,255,.35),
+    transparent 35%),
+
+    radial-gradient(circle at 85% 35%,
+    rgba(155,80,255,.35),
+    transparent 40%),
+
+    radial-gradient(circle at 50% 90%,
+    rgba(0,120,255,.25),
+    transparent 45%),
+
     linear-gradient(
-        180deg,
-        #01020a 0%,
-        #050816 50%,
-        #01020a 100%
+    180deg,
+    #01020a,
+    #050816,
+    #01020a
     );
+
+    animation:nebulaMove 20s ease-in-out infinite alternate;
+}
+
+
+@keyframes nebulaMove{
+
+    from{
+        transform:scale(1);
+    }
+
+    to{
+        transform:scale(1.15);
+    }
+
 }
 
 /* Container */
