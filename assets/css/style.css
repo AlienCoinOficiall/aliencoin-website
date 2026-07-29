@@ -479,6 +479,7 @@ ufoFloat 3s ease-in-out infinite;
     color:#00ffff;
 
     animation:loadingFade 3s forwards;
+pointer-events:none;
 }
 
 
@@ -508,6 +509,7 @@ ufoFloat 3s ease-in-out infinite;
 
     0%{
         opacity:1;
+        visibility:visible;
     }
 
     80%{
@@ -517,15 +519,11 @@ ufoFloat 3s ease-in-out infinite;
     100%{
         opacity:0;
         visibility:hidden;
+        display:none;
     }
-
-}
-
 
 @keyframes signalBlink{
 
     50%{
         opacity:.3;
     }
-
-}
