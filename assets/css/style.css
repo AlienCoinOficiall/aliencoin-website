@@ -676,41 +676,6 @@ pointer-events:none;
 }
 
 
-#tokenomics .token-box{
-    display:grid;
-    gap:20px;
-    margin-top:40px;
-}
-
-
-#tokenomics .token-box div{
-
-    padding:25px;
-
-    border:1px solid rgba(0,255,255,.5);
-
-    border-radius:20px;
-
-    background:
-    rgba(0,0,0,.45);
-
-    box-shadow:
-    0 0 20px rgba(0,255,255,.2);
-
-    transition:.3s;
-}
-
-
-#tokenomics .token-box div:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:
-    0 0 30px rgba(0,255,255,.6);
-
-}
-
-
 #tokenomics h3{
 
     color:#00ffff;
@@ -721,51 +686,7 @@ pointer-events:none;
     0 0 10px #00ffff;
 
 }
-/* Tokenomics Card Fix */
 
-.token-box{
-    display:grid;
-    gap:20px;
-    margin-top:40px;
-    padding:20px;
-}
-
-
-.token-box > div{
-
-    padding:25px;
-
-    border:1px solid rgba(0,255,255,.5);
-
-    border-radius:20px;
-
-    background:rgba(5,10,25,.8);
-
-    box-shadow:
-    0 0 20px rgba(0,255,255,.25);
-
-    text-align:center;
-
-}
-
-
-.token-box > div h3{
-
-    color:#00ffff;
-
-    font-size:26px;
-
-    text-shadow:
-    0 0 15px #00ffff;
-
-}
-
-
-.token-box > div p{
-
-    color:white;
-
-}
 .token-card{
     padding:25px;
     margin:15px 0;
