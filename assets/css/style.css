@@ -549,3 +549,22 @@ pointer-events:none;
     transform:translateY(0);
 
 }
+/* Project Information */
+
+#contract{
+
+    padding:80px 20px;
+
+    text-align:center;
+
+}
+
+
+#contract h2{
+
+    color:#00ffff;
+
+    text-shadow:
+    0 0 15px #00ffff;
+
+}
