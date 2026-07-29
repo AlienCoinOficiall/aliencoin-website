@@ -29,10 +29,15 @@ body::before{
     z-index:-2;
 
     background:
-    radial-gradient(circle at 20% 20%, rgba(0,255,255,.18), transparent 30%),
-    radial-gradient(circle at 80% 30%, rgba(132,0,255,.18), transparent 35%),
-    radial-gradient(circle at 50% 80%, rgba(0,140,255,.16), transparent 40%),
-    linear-gradient(180deg,#02030b 0%,#050816 50%,#02030b 100%);
+    radial-gradient(circle at 20% 30%, rgba(0,255,255,.25), transparent 35%),
+    radial-gradient(circle at 80% 20%, rgba(150,0,255,.25), transparent 40%),
+    radial-gradient(circle at 50% 90%, rgba(0,120,255,.2), transparent 45%),
+    linear-gradient(
+        180deg,
+        #01020a 0%,
+        #050816 50%,
+        #01020a 100%
+    );
 }
 
 /* Container */
@@ -210,6 +215,7 @@ footer{
 }
 /* Star Background */
 
+
 .stars{
     position:fixed;
     inset:0;
@@ -217,28 +223,16 @@ footer{
     pointer-events:none;
 
     background-image:
-    radial-gradient(3px 3px at 10% 20%, #ffffff, transparent),
-    radial-gradient(2px 2px at 25% 70%, #66f7ff, transparent),
-    radial-gradient(3px 3px at 45% 35%, #ffffff, transparent),
-    radial-gradient(2px 2px at 65% 80%, #66f7ff, transparent),
-    radial-gradient(3px 3px at 85% 25%, #ffffff, transparent),
-    radial-gradient(2px 2px at 75% 55%, #9b5cff, transparent);
+    radial-gradient(3px 3px at 10% 15%, white, transparent),
+    radial-gradient(2px 2px at 30% 40%, cyan, transparent),
+    radial-gradient(3px 3px at 50% 20%, white, transparent),
+    radial-gradient(2px 2px at 70% 60%, cyan, transparent),
+    radial-gradient(3px 3px at 90% 35%, white, transparent),
+    radial-gradient(2px 2px at 40% 80%, #9b5cff, transparent);
 
-    background-size:900px 900px;
+    background-size:800px 800px;
 
-    animation:starMove 25s linear infinite;
+    animation:starMove 20s linear infinite;
 
-    opacity:.95;
-}
-
-@keyframes starMove{
-
-    from{
-        transform:translateY(0);
-    }
-
-    to{
-        transform:translateY(-900px);
-    }
-
+    opacity:1;
 }
