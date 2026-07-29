@@ -1,0 +1,219 @@
+/* ==========================================
+   ALIEN COIN UFO
+   ANIMATIONS.CSS
+========================================== */
+
+/* Fade In */
+
+@keyframes fadeIn {
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.fade-in{
+    animation:fadeIn 1.2s ease forwards;
+}
+
+/* Floating */
+
+@keyframes floating{
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+}
+
+.float{
+    animation:floating 5s ease-in-out infinite;
+}
+
+/* Pulse Glow */
+
+@keyframes pulseGlow{
+
+    0%{
+        box-shadow:0 0 10px cyan;
+    }
+
+    50%{
+        box-shadow:
+        0 0 20px cyan,
+        0 0 40px cyan;
+    }
+
+    100%{
+        box-shadow:0 0 10px cyan;
+    }
+
+}
+
+.glow{
+    animation:pulseGlow 2.5s infinite;
+}
+
+/* Neon Text */
+
+@keyframes neon{
+
+    0%{
+        text-shadow:
+        0 0 5px cyan,
+        0 0 10px cyan;
+    }
+
+    50%{
+        text-shadow:
+        0 0 15px cyan,
+        0 0 30px cyan,
+        0 0 60px cyan;
+    }
+
+    100%{
+        text-shadow:
+        0 0 5px cyan,
+        0 0 10px cyan;
+    }
+
+}
+
+.neon{
+    animation:neon 2s infinite;
+}
+
+/* Rotation */
+
+@keyframes rotateSlow{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+.rotate{
+    animation:rotateSlow 40s linear infinite;
+}
+
+/* Star Twinkle */
+
+@keyframes twinkle{
+
+    0%{
+        opacity:.2;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.2;
+    }
+
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    animation:twinkle 2s infinite;
+}
+
+/* Button Hover */
+
+.btn{
+    transition:.35s ease;
+}
+
+.btn:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 0 20px cyan,
+        0 0 40px cyan;
+
+}
+
+/* Card Hover */
+
+.card{
+
+    transition:
+    transform .4s,
+    box-shadow .4s;
+
+}
+
+.card:hover{
+
+    transform:
+    translateY(-10px)
+    scale(1.02);
+
+}
+
+/* Logo */
+
+.logo{
+
+    animation:neon 3s infinite;
+
+}
+
+/* Hero Title */
+
+.hero h1{
+
+    animation:
+    fadeIn 1s ease,
+    neon 3s infinite;
+
+}
+
+/* Hero Text */
+
+.hero p{
+
+    animation:fadeIn 1.5s ease;
+
+}
+
+/* Scroll Animation */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:1s;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
