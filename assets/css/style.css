@@ -360,39 +360,40 @@ body::after{
 }
 /* UFO Animation */
 
+/* UFO Flight Animation */
+
 .ufo{
-
     position:absolute;
+    top:60px;
+    left:-120px;
 
-    top:80px;
-    left:-100px;
+    font-size:75px;
 
-    font-size:80px;
+    z-index:3;
 
-    opacity:.9;
+    animation:ufoMove 8s linear infinite;
 
     filter:
     drop-shadow(0 0 15px #00ffff)
     drop-shadow(0 0 35px #8b00ff);
-
-    animation:ufoMove 10s linear infinite;
-
-    z-index:2;
 }
 
 
 @keyframes ufoMove{
 
     0%{
-        transform:translateX(-120px) translateY(0) rotate(-10deg);
+        left:-120px;
+        transform:translateY(0) rotate(-10deg);
     }
 
     50%{
-        transform:translateX(50vw) translateY(-30px) rotate(10deg);
+        left:50%;
+        transform:translateY(-40px) rotate(10deg);
     }
 
     100%{
-        transform:translateX(120vw) translateY(0) rotate(-10deg);
+        left:110%;
+        transform:translateY(0) rotate(-10deg);
     }
 
 }
