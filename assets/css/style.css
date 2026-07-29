@@ -568,3 +568,62 @@ pointer-events:none;
     0 0 15px #00ffff;
 
 }
+/* Futuristic Roadmap */
+
+#roadmap{
+    position:relative;
+}
+
+
+#roadmap h2{
+    color:#00ffff;
+
+    text-shadow:
+    0 0 15px #00ffff;
+}
+
+
+#roadmap div{
+
+    border-left:2px solid rgba(0,255,255,.5);
+
+    padding-left:25px;
+
+    margin:30px 0;
+
+    position:relative;
+
+}
+
+
+#roadmap div::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-9px;
+    top:5px;
+
+    width:16px;
+    height:16px;
+
+    border-radius:50%;
+
+    background:#00ffff;
+
+    box-shadow:
+    0 0 15px #00ffff,
+    0 0 30px #8b00ff;
+
+}
+
+
+#roadmap h3{
+
+    color:#9b5cff;
+
+    text-shadow:
+    0 0 10px #9b5cff;
+
+}
