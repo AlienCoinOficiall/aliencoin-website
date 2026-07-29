@@ -627,3 +627,36 @@ pointer-events:none;
     0 0 10px #9b5cff;
 
 }
+/* Information Button */
+
+.info-btn{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:10px 25px;
+
+    border:1px solid #00ffff;
+
+    border-radius:30px;
+
+    color:#00ffff;
+
+    text-decoration:none;
+
+    box-shadow:
+    0 0 15px rgba(0,255,255,.5);
+
+    transition:.3s;
+
+}
+
+
+.info-btn:hover{
+
+    background:#00ffff;
+
+    color:#01020a;
+
+}
