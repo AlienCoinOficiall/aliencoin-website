@@ -766,3 +766,15 @@ pointer-events:none;
     color:white;
 
 }
+.token-card{
+    padding:25px;
+    margin:15px 0;
+
+    border:1px solid #00ffff;
+    border-radius:20px;
+
+    background:rgba(0,0,0,.4);
+
+    box-shadow:
+    0 0 20px rgba(0,255,255,.3);
+}
