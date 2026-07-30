@@ -1,126 +1,98 @@
-/* ==========================================
+/* ===================================================
    ALIEN COIN UFO
-   MAIN.JS
-========================================== */
+   script.js v1.0
+=================================================== */
 
-// Navbar Scroll Effect
+// Loading Screen
 
-const navbar = document.querySelector(".navbar");
+window.addEventListener("load", () => {
 
-window.addEventListener("scroll", () => {
+    const loader = document.querySelector(".loading-screen");
 
-    if(window.scrollY > 50){
-
-        navbar.classList.add("scrolled");
-
-    }else{
-
-        navbar.classList.remove("scrolled");
-
-    }
+    setTimeout(() => {
+        loader.classList.add("hide");
+    }, 1500);
 
 });
 
-// Smooth Scroll
+// Reveal Animation
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+const reveals = document.querySelectorAll(".reveal");
+
+function revealSection() {
+
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach(item => {
+
+        const top = item.getBoundingClientRect().top;
+
+        if (top < windowHeight - 100) {
+            item.classList.add("active");
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", revealSection);
+window.addEventListener("load", revealSection);
+
+// Smooth Navigation
+
+document.querySelectorAll('nav a').forEach(anchor => {
 
     anchor.addEventListener("click", function(e){
 
         e.preventDefault();
 
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
+        const target = document.querySelector(
+            this.getAttribute("href")
+        );
 
-            behavior:"smooth"
+        if(target){
 
-        });
+            target.scrollIntoView({
 
-    });
+                behavior:"smooth"
 
-});
-
-// Fade Animation
-
-const observer = new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
+            });
 
         }
 
     });
 
-},{
-    threshold:0.2
 });
+/* ===================================================
+   PART 2
+   ACTIVE MENU • PARALLAX • BACK TO TOP
+=================================================== */
 
-document.querySelectorAll(".fade-up").forEach(el=>{
+// Active Navigation
 
-    observer.observe(el);
-
-});/* ==========================================
-   BACK TO TOP BUTTON
-========================================== */
-
-const backToTop = document.querySelector(".back-to-top");
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav a");
 
 window.addEventListener("scroll", () => {
 
-    if(window.scrollY > 400){
-
-        backToTop.classList.add("active");
-
-    }else{
-
-        backToTop.classList.remove("active");
-
-    }
-
-});
-
-backToTop?.addEventListener("click", () => {
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
-
-});
-
-/* ==========================================
-   ACTIVE NAVIGATION
-========================================== */
-
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-menu a");
-
-window.addEventListener("scroll",()=>{
-
     let current = "";
 
-    sections.forEach(section=>{
+    sections.forEach(section => {
 
-        const sectionTop = section.offsetTop - 120;
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
 
-        if(window.scrollY >= sectionTop){
-
+        if (pageYOffset >= sectionTop) {
             current = section.getAttribute("id");
-
         }
 
     });
 
-    navLinks.forEach(link=>{
+    navLinks.forEach(link => {
 
         link.classList.remove("active");
 
-        if(link.getAttribute("href") === "#" + current){
+        if(link.getAttribute("href")==="#" + current){
 
             link.classList.add("active");
 
@@ -130,175 +102,190 @@ window.addEventListener("scroll",()=>{
 
 });
 
-/* ==========================================
-   PAGE LOADER
-========================================== */
-
-window.addEventListener("load",()=>{
-
-    document.body.classList.add("loaded");
-
-});
-
-/* ==========================================
-   BUTTON RIPPLE EFFECT
-========================================== */
-
-document.querySelectorAll(".btn").forEach(button=>{
-
-    button.addEventListener("click",function(e){
-
-        const circle = document.createElement("span");
-
-        const size = Math.max(this.clientWidth,this.clientHeight);
-
-        const x = e.clientX - this.getBoundingClientRect().left - size/2;
-
-        const y = e.clientY - this.getBoundingClientRect().top - size/2;
-
-        circle.style.width = size + "px";
-        circle.style.height = size + "px";
-        circle.style.left = x + "px";
-        circle.style.top = y + "px";
-
-        circle.classList.add("ripple");
-
-        this.appendChild(circle);
-
-        setTimeout(()=>{
-
-            circle.remove();
-
-        },600);
-
-    });
-
-});/* ==========================================
-   PARALLAX EFFECT
-========================================== */
+// Hero Parallax
 
 window.addEventListener("scroll", () => {
 
-    const stars = document.querySelector(".stars");
+    const hero = document.querySelector(".hero");
+
+    if(hero){
+
+        hero.style.backgroundPositionY =
+            window.pageYOffset * 0.35 + "px";
+
+    }
+
+});
+
+// Floating Stars Effect
+
+const stars = document.querySelector(".stars");
+
+window.addEventListener("mousemove",(e)=>{
 
     if(stars){
 
+        const x = e.clientX / window.innerWidth;
+        const y = e.clientY / window.innerHeight;
+
         stars.style.transform =
-            `translateY(${window.scrollY * 0.3}px)`;
+            `translate(${x*10}px,${y*10}px)`;
 
     }
 
 });
 
-/* ==========================================
-   TOKEN COUNTER
-========================================== */
+// Back To Top Button
 
-const counters = document.querySelectorAll(".counter");
+const topButton = document.querySelector(".back-to-top");
 
-counters.forEach(counter => {
+window.addEventListener("scroll",()=>{
 
-    const target = Number(counter.dataset.target);
+    if(!topButton) return;
 
-    let count = 0;
+    if(window.scrollY > 500){
 
-    const speed = target / 120;
+        topButton.classList.add("show");
 
-    function updateCounter(){
+    }else{
 
-        if(count < target){
-
-            count += speed;
-
-            counter.innerText = Math.floor(count).toLocaleString();
-
-            requestAnimationFrame(updateCounter);
-
-        }else{
-
-            counter.innerText = target.toLocaleString();
-
-        }
+        topButton.classList.remove("show");
 
     }
 
-    updateCounter();
-
 });
 
-/* ==========================================
-   RANDOM GLOW EFFECT
-========================================== */
+if(topButton){
 
-setInterval(()=>{
+    topButton.addEventListener("click",()=>{
 
-    document.querySelectorAll(".card").forEach(card=>{
+        window.scrollTo({
 
-        card.style.boxShadow =
-            "0 0 20px rgba(25,255,178,.15)";
+            top:0,
 
-        setTimeout(()=>{
+            behavior:"smooth"
 
-            card.style.boxShadow = "";
-
-        },800);
+        });
 
     });
 
-},5000);
+}/* ===================================================
+   PART 3
+   COUNTER • GLOW • PERFORMANCE • FINAL
+=================================================== */
 
-/* ==========================================
-   TYPING EFFECT
-========================================== */
+// Token Counter Animation
 
-const typingText = document.querySelector(".typing");
+const counters = document.querySelectorAll("[data-count]");
+let counterStarted = false;
 
-if(typingText){
+function startCounter() {
 
-    const text =
-        "WE ARE NOT FROM EARTH.";
+    if (counterStarted) return;
 
-    let i = 0;
+    const tokenSection = document.querySelector("#tokenomics");
 
-    function typing(){
+    if (!tokenSection) return;
 
-        if(i < text.length){
+    const trigger =
+        tokenSection.getBoundingClientRect().top;
 
-            typingText.innerHTML += text.charAt(i);
+    if (trigger < window.innerHeight - 100) {
 
-            i++;
+        counterStarted = true;
 
-            setTimeout(typing,70);
+        counters.forEach(counter => {
 
-        }
+            const target =
+                Number(counter.dataset.count);
+
+            let current = 0;
+
+            const increment = Math.max(1, target / 120);
+
+            const update = () => {
+
+                current += increment;
+
+                if (current >= target) {
+
+                    counter.innerText =
+                        target.toLocaleString();
+
+                } else {
+
+                    counter.innerText =
+                        Math.floor(current).toLocaleString();
+
+                    requestAnimationFrame(update);
+
+                }
+
+            };
+
+            update();
+
+        });
 
     }
 
-    typing();
-
 }
 
-/* ==========================================
-   YEAR AUTO UPDATE
-========================================== */
+window.addEventListener("scroll", startCounter);
+window.addEventListener("load", startCounter);
 
-const year = document.querySelector("#year");
+// Button Glow Effect
 
-if(year){
+document.querySelectorAll(".btn").forEach(btn => {
 
-    year.textContent = new Date().getFullYear();
+    btn.addEventListener("mouseenter", () => {
 
-}
+        btn.style.boxShadow =
+            "0 0 20px #19ffb2,0 0 50px #19ffb2";
 
-/* ==========================================
-   CONSOLE MESSAGE
-========================================== */
+    });
+
+    btn.addEventListener("mouseleave", () => {
+
+        btn.style.boxShadow = "";
+
+    });
+
+});
+
+// Navbar Background
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+
+    if (!header) return;
+
+    if (window.scrollY > 80) {
+
+        header.style.background =
+            "rgba(2,4,10,.92)";
+
+        header.style.backdropFilter =
+            "blur(18px)";
+
+    } else {
+
+        header.style.background =
+            "rgba(2,4,10,.75)";
+
+    }
+
+});
+
+// Console Welcome
 
 console.log("%cALIEN COIN UFO",
-"color:#19ffb2;font-size:22px;font-weight:bold;");
+"color:#19ffb2;font-size:24px;font-weight:bold;");
 
-console.log("The Signal Has Been Sent.");
+console.log("%cGalactic Transmission Online",
+"color:#7ffff0;font-size:14px;");
 
-/* ==========================================
-   END OF MAIN.JS
-========================================== */
+// End
+
+console.log("Website Ready 🚀");
