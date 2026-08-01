@@ -2460,6 +2460,165 @@ nav{
 
 }
 /* ==========================================================
+   SECURITY
+========================================================== */
+
+.security{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.security-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:30px;
+
+    margin-top:60px;
+
+}
+
+.security-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:45px 35px;
+
+    border-radius:28px;
+
+    text-align:center;
+
+    background:linear-gradient(
+        145deg,
+        rgba(10,15,28,.92),
+        rgba(6,10,18,.92)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s ease;
+
+}
+
+.security-card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:rgba(57,255,20,.35);
+
+    box-shadow:
+        0 0 35px rgba(57,255,20,.18),
+        0 0 70px rgba(0,229,255,.10);
+
+}
+
+.security-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:radial-gradient(
+        circle at top right,
+        rgba(57,255,20,.15),
+        transparent 70%
+    );
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+.security-card:hover::before{
+
+    opacity:1;
+
+}
+
+.security-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:0 auto 28px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:42px;
+
+    border-radius:24px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(57,255,20,.18),
+        rgba(0,229,255,.18)
+    );
+
+    box-shadow:
+        inset 0 0 20px rgba(255,255,255,.06),
+        0 0 25px rgba(57,255,20,.18);
+
+}
+
+.security-card h3{
+
+    font-family:'Orbitron',sans-serif;
+
+    font-size:24px;
+
+    color:var(--green);
+
+    margin-bottom:18px;
+
+}
+
+.security-card p{
+
+    color:var(--gray);
+
+    line-height:1.9;
+
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.security-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:768px){
+
+.security-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+/* ==========================================================
    COMMUNITY
 ========================================================== */
 
