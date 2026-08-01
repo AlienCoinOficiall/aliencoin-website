@@ -924,6 +924,72 @@ animation:ringRotate 25s linear infinite;
 }
 
 /* ==========================================================
+   RADAR SCAN
+========================================================== */
+
+.radar-scan{
+
+    position:absolute;
+
+    width:520px;
+
+    height:520px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    z-index:4;
+
+}
+
+.radar-scan::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:conic-gradient(
+
+        transparent 0deg,
+
+        transparent 320deg,
+
+        rgba(57,255,20,.45) 340deg,
+
+        rgba(57,255,20,.05) 360deg
+
+    );
+
+    border-radius:50%;
+
+    animation:radarRotate 5s linear infinite;
+
+}
+
+.radar-scan::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:18px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(57,255,20,.15);
+
+    box-shadow:
+
+        0 0 30px rgba(57,255,20,.15),
+
+        inset 0 0 20px rgba(57,255,20,.10);
+
+}
+
+/* ==========================================================
    SIGNAL WAVES
 ========================================================== */
 
@@ -3459,6 +3525,20 @@ margin-top:40px;
             rotate(-35deg);
 
         opacity:0;
+
+    }
+
+@keyframes radarRotate{
+
+    from{
+
+        transform:rotate(0deg);
+
+    }
+
+    to{
+
+        transform:rotate(360deg);
 
     }
 
