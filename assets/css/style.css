@@ -2940,3 +2940,50 @@ width:100%;
 }
 
 }
+/* Stars */
+@keyframes starsMove{
+    from{
+        transform:translateY(0);
+    }
+    to{
+        transform:translateY(-400px);
+    }
+}
+
+/* Nebula */
+@keyframes nebulaFloat{
+    0%{
+        transform:translate(0,0) scale(1);
+    }
+    100%{
+        transform:translate(-40px,-30px) scale(1.15);
+    }
+}
+
+/* Loader Logo */
+@keyframes pulseLogo{
+    0%,100%{
+        transform:scale(1);
+        box-shadow:
+            0 0 35px rgba(57,255,20,.4),
+            inset 0 0 25px rgba(57,255,20,.2);
+    }
+
+    50%{
+        transform:scale(1.08);
+        box-shadow:
+            0 0 60px rgba(57,255,20,.8),
+            inset 0 0 35px rgba(57,255,20,.4);
+    }
+}
+
+/* Loading Bar */
+@keyframes loading{
+    0%{
+        transform:translateX(-120%);
+    }
+
+    100%{
+        transform:translateX(350%);
+    }
+}
