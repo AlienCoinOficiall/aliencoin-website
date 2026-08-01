@@ -1178,7 +1178,8 @@ header.scrolled{
     backdrop-filter:blur(20px);
 
     transition:.45s ease;
-
+transform-style:preserve-3d;
+perspective:1200px;
 }
 
 .about-card::before{
@@ -1558,9 +1559,8 @@ header.scrolled{
     border:1px solid rgba(255,255,255,.08);
 
     backdrop-filter:blur(20px);
-
-    transition:.45s;
-
+transform-style:preserve-3d;
+perspective:1200px;
 }
 
 .vision-card::before{
@@ -1708,7 +1708,8 @@ header.scrolled{
     backdrop-filter:blur(18px);
 
     transition:.45s ease;
-
+transform-style:preserve-3d;
+perspective:1200px;
 }
 
 /* Animated Border Glow */
@@ -1902,7 +1903,8 @@ header.scrolled{
     text-align:center;
 
     transition:.45s ease;
-
+transform-style:preserve-3d;
+perspective:1200px;
 }
 
 /* Timeline Node */
