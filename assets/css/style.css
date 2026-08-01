@@ -777,26 +777,41 @@ header.scrolled{
     align-items:center;
 
     min-height:700px;
-transition: transform .2s linear;
-will-change: transform;
+
+    perspective:1200px;
+
+    transition:transform .2s ease;
+
+    will-change:transform;
+
 }
 
 .ufo-image{
 
     position:relative;
 
-    width:520px;
+    width:480px;
+
+    max-width:90%;
 
     z-index:10;
 
     filter:
-        drop-shadow(0 0 40px rgba(57,255,20,.45))
-        drop-shadow(0 0 80px rgba(0,229,255,.25));
+        drop-shadow(0 0 45px rgba(57,255,20,.45))
+        drop-shadow(0 0 90px rgba(0,229,255,.28));
 
     animation:ufoFloat 6s ease-in-out infinite;
 
-}
+    transition:transform .3s ease;
 
+}
+.hero-image:hover .ufo-image{
+
+    transform:
+        scale(1.04)
+        rotateZ(2deg);
+
+}
 /* ==========================================================
    UFO CORE
 ========================================================== */
@@ -805,9 +820,9 @@ will-change: transform;
 
     position:absolute;
 
-    width:170px;
+    width:190px;
 
-    height:170px;
+    height:190px;
 
     border-radius:50%;
 
@@ -819,7 +834,7 @@ will-change: transform;
             transparent 75%
         );
 
-    filter:blur(8px);
+    filter:blur(12px);
 
     animation:corePulse 3s ease-in-out infinite;
 
@@ -833,9 +848,9 @@ will-change: transform;
 
     position:absolute;
 
-    width:420px;
+    width:450px;
 
-    height:420px;
+    height:450px;
 
     border-radius:50%;
 
