@@ -767,10 +767,10 @@ header.scrolled{
     justify-content: center;
     align-items: center;
 
-    min-height: 500px;
+    min-height: 550px;
 
-    margin-top: -140px;
-    margin-bottom: -60px;
+    margin-top: -70px;
+    margin-bottom: 0;
 
     transition: transform .2s linear;
     will-change: transform;
@@ -3171,5 +3171,43 @@ footer p{
     filter:
         drop-shadow(0 0 60px rgba(57,255,20,.8))
         drop-shadow(0 0 120px rgba(0,229,255,.5));
+
+}
+/* ==========================================
+   RESPONSIVE MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .hero .container{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .hero-content{
+        width:100%;
+        max-width:100%;
+    }
+
+    .hero-image{
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        min-height:420px;
+        margin-top:30px;
+        margin-left:0;
+    }
+
+    .ufo-image{
+        width:90%;
+        max-width:420px;
+    }
+
+    .hero-stats{
+        grid-template-columns:1fr;
+    }
 
 }
