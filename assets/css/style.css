@@ -766,45 +766,33 @@ header.scrolled{
    PREMIUM UFO
 ========================================================== */
 
-.hero-image{
-
-    position:relative;
-
+.hero{
+    min-height:100vh;
     display:flex;
-
-    justify-content:center;
-
     align-items:center;
-
-    min-height:700px;
-
-    perspective:1200px;
-
-    transition:transform .2s ease;
-
-    will-change:transform;
-
+    justify-content:center;
+    overflow:hidden;
+    position:relative;
+    padding:120px 0 80px;
 }
 
 .ufo-image{
 
     position:relative;
 
-    width:480px;
-
-    max-width:90%;
+    width:min(90vw,650px);
 
     z-index:10;
 
     filter:
-        drop-shadow(0 0 45px rgba(57,255,20,.45))
-        drop-shadow(0 0 90px rgba(0,229,255,.28));
+        drop-shadow(0 0 40px rgba(57,255,20,.45))
+        drop-shadow(0 0 80px rgba(0,229,255,.25));
 
     animation:ufoFloat 6s ease-in-out infinite;
 
-    transition:transform .3s ease;
-
 }
+
+
 .hero-image:hover .ufo-image{
 
     transform:
@@ -820,9 +808,9 @@ header.scrolled{
 
     position:absolute;
 
-    width:190px;
+    width:260px;
 
-    height:190px;
+    height:260px;
 
     border-radius:50%;
 
@@ -834,7 +822,7 @@ header.scrolled{
             transparent 75%
         );
 
-    filter:blur(12px);
+    filter:blur(20px);
 
     animation:corePulse 3s ease-in-out infinite;
 
@@ -848,9 +836,9 @@ header.scrolled{
 
     position:absolute;
 
-    width:450px;
+    width:520px;
 
-    height:450px;
+    height:520px;
 
     border-radius:50%;
 
