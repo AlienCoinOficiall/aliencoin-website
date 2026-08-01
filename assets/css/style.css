@@ -1124,6 +1124,60 @@ z-index:0;
 .hero-particles span:nth-child(10){top:12%;left:60%;}
 
 }
+ /* ==========================================================
+   METEOR
+========================================================== */
+
+.meteor{
+
+    position:absolute;
+
+    width:180px;
+
+    height:2px;
+
+    background:linear-gradient(
+        90deg,
+        rgba(255,255,255,0),
+        rgba(0,229,255,.9),
+        rgba(57,255,20,.9)
+    );
+
+    border-radius:50%;
+
+    filter:blur(1px);
+
+    transform:rotate(-35deg);
+
+    animation:meteorMove 8s linear infinite;
+
+    z-index:1;
+
+}
+
+.meteor-1{
+
+    top:8%;
+    left:-20%;
+    animation-delay:0s;
+
+}
+
+.meteor-2{
+
+    top:28%;
+    left:-40%;
+    animation-delay:2.5s;
+
+}
+
+.meteor-3{
+
+    top:58%;
+    left:-30%;
+    animation-delay:5s;
+
+}
 
 /* ==========================================================
    SCROLL INDICATOR
@@ -3375,6 +3429,36 @@ margin-top:40px;
         opacity:1;
 
         transform:scale(1.8);
+
+    }
+
+@keyframes meteorMove{
+
+    0%{
+
+        transform:
+            translateX(0)
+            translateY(0)
+            rotate(-35deg);
+
+        opacity:0;
+
+    }
+
+    10%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+            translateX(1800px)
+            translateY(900px)
+            rotate(-35deg);
+
+        opacity:0;
 
     }
 
