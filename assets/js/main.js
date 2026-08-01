@@ -601,3 +601,30 @@ console.log(
 
 );
 
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+const reveals = document.querySelectorAll(
+".reveal, .reveal-left, .reveal-right, .reveal-zoom"
+);
+
+function revealOnScroll(){
+
+    const trigger = window.innerHeight * 0.85;
+
+    reveals.forEach(item=>{
+
+        const top = item.getBoundingClientRect().top;
+
+        if(top < trigger){
+            item.classList.add("active");
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", revealOnScroll);
+
+revealOnScroll();
