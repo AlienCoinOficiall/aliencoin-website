@@ -268,13 +268,37 @@ header{
     left:0;
     width:100%;
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
 
-    background:rgba(6,10,20,.45);
+    background:rgba(6,10,20,.30);
 
-    border-bottom:1px solid rgba(255,255,255,.08);
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.18);
 
     z-index:999;
+
+    transition:
+        background .35s,
+        backdrop-filter .35s,
+        box-shadow .35s,
+        border-color .35s;
+
+}
+
+header.scrolled{
+
+    background:rgba(6,10,20,.88);
+
+    border-bottom:1px solid rgba(57,255,20,.18);
+
+    box-shadow:
+
+        0 10px 35px rgba(0,0,0,.35),
+
+        0 0 20px rgba(57,255,20,.08);
 
 }
 
@@ -311,8 +335,14 @@ header .container{
 
     color:var(--white);
     letter-spacing:2px;
+    text-shadow:
+
+    0 0 10px rgba(57,255,20,.35),
+
+    0 0 18px rgba(0,229,255,.20);
 
 }
+
 /* ==========================================================
    PREMIUM NAVIGATION
 ========================================================== */
@@ -336,6 +366,9 @@ nav{
 
     position:relative;
 
+    overflow:hidden;
+    z-index:1;
+   
     color:rgba(255,255,255,.85);
 
     font-family:'Orbitron',sans-serif;
@@ -346,7 +379,9 @@ nav{
 
     letter-spacing:1px;
 
-    transition:.35s;
+    transition:
+    width .35s ease,
+    box-shadow .35s ease;
 
     padding:8px 0;
 
@@ -356,6 +391,8 @@ nav{
 
     color:var(--green);
 
+    transform:translateY(-2px);
+   
     text-shadow:
         0 0 8px var(--green),
         0 0 18px var(--green);
